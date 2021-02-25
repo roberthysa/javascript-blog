@@ -43,13 +43,6 @@ function titleClickHandler(event){
   targetArticle.classList.add('active');
 }
 
-const links = document.querySelectorAll('.titles a');
-console.log('links:', links);
-
-for(let link of links){
-  link.addEventListener('click', titleClickHandler);
-}
-
 const optArticleSelector = '.post',
   optTitleSelector = '.post-title',
   optTitleListSelector = '.titles';
@@ -64,7 +57,7 @@ function generateTitleLinks(){
 
   /* [DONE] find all the articles and save them to variable: articles */
 
-  let articles = document.querySelectorAll(optArticleSelector);
+  const articles = document.querySelectorAll(optArticleSelector);
   console.log('articles:', articles);
 
   let html = '';
@@ -102,6 +95,15 @@ function generateTitleLinks(){
 
     titleList.innerHTML = html;
     console.log('titleList:', titleList);
+
+    /* [DONE] find witch link is clicked*/
+
+    const links = document.querySelectorAll('.titles a');
+    console.log('links:', links);
+
+    for(let link of links){
+      link.addEventListener('click', titleClickHandler);
+    }
 
     console.log('generateTitleLinks is done');
 }
