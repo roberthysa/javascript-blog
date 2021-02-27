@@ -4,6 +4,9 @@
 
 $color-light: #fff;
 $color-dark: #444;
+$color-background: #ecf0f1;
+$color-tittle: #2980b9;
+$color-logo: #2c3e50;
 
 $font-logo: 'Sacramento', cursive;
 $font-header: 'Oswald', sans-serif;
@@ -16,7 +19,7 @@ $font-text: 'Source Sans Pro', sans-serif;
 }
 
 body {
-  background: $color-light;
+  background: $color-background;
   font-family: $font-text;
   color: $color-dark;
   font-weight: 300;
@@ -30,6 +33,7 @@ body {
 }
 
 .section-title {
+  color: $color-tittle;
   font-size: 22px;
   text-transform: uppercase;
   font-family: $font-header;
@@ -59,6 +63,7 @@ body {
 .sidebar, .posts {
   background: $color-light;
   margin-right: 10px;
+  margin-top: 10px;
   padding: 40px;
   border: 1px solid $color-dark;
   border-radius: 5px;
@@ -67,6 +72,7 @@ body {
 /* Logo */
 
 .logo {
+  color: $color-logo;
   font-family: $font-logo;
   font-weight: 400;
   font-size: 104px;
@@ -89,6 +95,10 @@ body {
   li {
     display: inline-block;
   }
+}
+
+.list a {
+  text-decoration: none;
 }
 
 /* Authors */
@@ -116,5 +126,33 @@ body {
   display: flex;
   p {
     margin: 0 10px 0 0;
+    color: $color-tittle;
+  }
+}
+
+.post-title {
+  color: $color-tittle;
+}
+
+/* Media */
+
+@media (max-width: 767px) {
+
+  .wrapper {
+    flex-direction: column;
+  }
+
+  .tittles, .tags, .authors {
+    li {
+      display: inline-block;
+    }
+  }
+
+  .logo {
+    font-size: 48px;
+  }
+
+  .sidebar, .posts {
+    padding: 24px;
   }
 }
