@@ -30,7 +30,7 @@ function titleClickHandler(event){
 
   /* [DONE] get 'href' attribute from the clicked link */
 
-  const articleSelector = clickedElement.getAttribute("href");
+  const articleSelector = clickedElement.getAttribute('href');
   console.log('articleSelector:', articleSelector);
 
   /* [DONE] find the correct article using the selector (value of 'href' attribute) */
@@ -68,7 +68,7 @@ function generateTitleLinks(){
 
     /* [DONE] get the article id */
 
-    const articleId = article.getAttribute("id");
+    const articleId = article.getAttribute('id');
     console.log('articleId:', articleId);
 
     /* find the title element */
@@ -91,21 +91,21 @@ function generateTitleLinks(){
 
   }
 
-    /* [DONE] insert link into titleList */
+  /* [DONE] insert link into titleList */
 
-    titleList.innerHTML = html;
-    console.log('titleList:', titleList);
+  titleList.innerHTML = html;
+  console.log('titleList:', titleList);
 
-    /* [DONE] find witch link is clicked*/
+  /* [DONE] find witch link is clicked*/
 
-    const links = document.querySelectorAll('.titles a');
-    console.log('links:', links);
+  const links = document.querySelectorAll('.titles a');
+  console.log('links:', links);
 
-    for(let link of links){
-      link.addEventListener('click', titleClickHandler);
-    }
+  for(let link of links){
+    link.addEventListener('click', titleClickHandler);
+  }
 
-    console.log('generateTitleLinks is done');
+  console.log('generateTitleLinks is done');
 }
 
 generateTitleLinks();
