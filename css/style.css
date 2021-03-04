@@ -120,6 +120,27 @@ body {
   color: #2980b9;
 }
 
+/* tag-size-x*/
+.tag-size-1 {
+  font-size: 0.8em;
+}
+
+.tag-size-2 {
+  font-size: 0.9em;
+}
+
+.tag-size-3 {
+  font-size: 1em;
+}
+
+.tag-size-4 {
+  font-size: 1.1em;
+}
+
+.tag-size-5 {
+  font-size: 1.2em;
+}
+
 /* Media */
 @media (max-width: 767px) {
   .wrapper {
