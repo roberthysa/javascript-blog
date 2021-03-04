@@ -117,9 +117,9 @@ function generateTitleLinks(customSelector = ''){
 generateTitleLinks();
 
 function generateTags(){
-  /* [NEW] create a new variable allTags with an empty array */
+  /* [NEW] create a new variable allTags with an empty object */
 
-  let allTags = [];
+  let allTags = {};
 
   /* [DONE] find all articles */
 
@@ -167,11 +167,13 @@ function generateTags(){
 
       /* [NEW] check if this link is NOT already in allTags */
 
-      if(allTags.indexOf(linkHTML) == -1){
+      if(!allTags.hasOwnProperty(tag)){
 
-        /* [NEW] add generated code to allTags array */
+        /* [NEW] add tag to allTags object */
 
-        allTags.push(linkHTML);
+        allTags[tag] = 1;
+      } else {
+        allTags[tag]++;
       }
 
       /* END LOOP: for each tag */
@@ -191,10 +193,26 @@ function generateTags(){
 
   const tagList = document.querySelector('.tags');
 
-  /* [NEW] add html from allTags to tagList */
+  /* [NEW] create variable for all links HTML code */
 
-  tagList.innerHTML = allTags.join(' ');
+  let allTagsHTML = '';
 
+  /* [NEW] START LOOP: for each tag in allTags: */
+
+  for(let tag in allTags){
+
+    /* [NEW] generate code of a link and add it to allTagsHTML */
+
+    allTagsHTML += '<li><a href="#tag-' + tag + '">' + tag + ' (' + allTags[tag] + ') ' + '</a></li>';
+
+    /* [NEW] END LOOP: for each tag in allTags: */
+  }
+
+  /* [NEW] add html from allTagsHTML to tagList */
+
+  tagList.innerHTML = allTagsHTML;
+
+  console.log('tagList:', tagList);
   console.log('generateTags is done');
 }
 
