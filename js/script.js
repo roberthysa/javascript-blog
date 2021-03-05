@@ -365,7 +365,7 @@ function generateAuthors(){
 
     if(!allAuthors.hasOwnProperty(articleAuthor)){
 
-      /* [NEW] add tag to allAuthors object */
+      /* [NEW] add articleAuthor to allAuthors object */
 
       allAuthors[articleAuthor] = 1;
     } else {
@@ -395,16 +395,16 @@ function generateAuthors(){
 
   for(let articleAuthor in allAuthors){
 
-    /* [NEW] generate code of a link and add it to allTagsHTML */
+    /* [NEW] generate code of a link and add it to allAuthorsHTML */
 
     const authorLinkHTML = '<li><a class="' + calculateTagClass(allAuthors[articleAuthor], authorsParams) + '" href="#tag-' + articleAuthor + '">' + articleAuthor + '</a>' + ' (' + allAuthors[articleAuthor] + ') ' + '</li>';
     console.log('authorLinkHTML:', authorLinkHTML);
     allAuthorsHTML += authorLinkHTML;
 
-    /* [NEW] END LOOP: for each tag in allTags: */
+    /* [NEW] END LOOP: for each articleAuthor in allAuthors: */
   }
 
-  /* [NEW] add html from allTagsHTML to tagList */
+  /* [NEW] add html from allAuthorsHTML to authorList */
 
   authorList.innerHTML = allAuthorsHTML;
   console.log('authorList:', authorList);
