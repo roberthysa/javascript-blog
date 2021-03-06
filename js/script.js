@@ -13,10 +13,8 @@ const optArticleSelector = '.post',
   optTitleListSelector = '.titles',
   optArticleTagsSelector = '.post-tags .list',
   optArticleAuthorSelector = '.post-author',
-  optTagsListSelector = '.tags.list',
   optCloudClassCount = 5,
-  optCloudClassPrefix = 'tag-size-',
-  optAuthorsListSelector = '.authors.list';
+  optCloudClassPrefix = 'tag-size-';
 
 function titleClickHandler(event){
   event.preventDefault();
@@ -204,7 +202,7 @@ function generateTags(){
 
       /* [NEW] check if this link is NOT already in allTags */
 
-      if(!allTags.hasOwnProperty(tag)){
+      if(!Object.prototype.hasOwnProperty.call(allTags, tag)){
 
         /* [NEW] add tag to allTags object */
 
@@ -385,7 +383,7 @@ function generateAuthors(){
 
     /* [NEW] check if this link is NOT already in allAuthors */
 
-    if(!allAuthors.hasOwnProperty(articleAuthor)){
+    if(!Object.prototype.hasOwnProperty.call(allAuthors, articleAuthor)){
 
       /* [NEW] add articleAuthor to allAuthors object */
 
